@@ -124,7 +124,7 @@ Dota2._getMessageName = function(kMsg) {
                     Dota2.schema.EGCMsgResponse,
                     Dota2.schema.EGCMsgUseItemResponse];
     for (var i=0; i<msgTypes.length; i++) {
-        let msg = Object.keys(msgTypes[i]).find(key => msgTypes[i][key] === kMsg);
+        let msg = Object.keys(msgTypes[i] || {}).find(key => msgTypes[i][key] === kMsg);
         if (msg) return msg;
     }
 }
