@@ -117,6 +117,7 @@ function handleSubscribedType(obj_type, object_data, isDelete) {
 };
 
 Dota2.Dota2Client.prototype._handleWelcomeCaches = function handleWelcomeCaches(message) {
+    try {
     var welcome = Dota2.schema.CMsgClientWelcome.decode(message);
     var _self = this;
 
@@ -127,6 +128,9 @@ Dota2.Dota2Client.prototype._handleWelcomeCaches = function handleWelcomeCaches(
                 handleSubscribedType.call(_self, obj.type_id, obj.object_data[0]);
             });
         });
+    } catch(e) {
+        console.warn(e);
+    }
 };
 
 // Events
