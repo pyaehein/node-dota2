@@ -217,6 +217,7 @@ Dota2.Dota2Client.prototype._handleWelcomeCaches = function handleWelcomeCaches(
 var handlers = Dota2.Dota2Client.prototype._handlers;
 
 var onCacheSubscribed = function onCacheSubscribed(message) {
+    try {
     var subscribe = Dota2.schema.CMsgSOCacheSubscribed.decode(message);
     var _self = this;
 
@@ -225,6 +226,9 @@ var onCacheSubscribed = function onCacheSubscribed(message) {
     subscribe.objects.forEach(function(obj) {
         handleSubscribedType.call(_self, obj.type_id, obj.object_data);
     });
+    } catch(e) {
+        console.warn(e);
+    }
 };
 handlers[Dota2.schema.ESOMsg.k_ESOMsg_CacheSubscribed] = onCacheSubscribed;
 
