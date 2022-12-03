@@ -129,7 +129,7 @@ Dota2.Dota2Client.prototype._handleWelcomeCaches = function handleWelcomeCaches(
             });
         });
     } catch(e) {
-        console.warn(e);
+        // ignore
     }
 };
 
@@ -227,7 +227,7 @@ var onCacheSubscribed = function onCacheSubscribed(message) {
         handleSubscribedType.call(_self, obj.type_id, obj.object_data);
     });
     } catch(e) {
-        console.warn(e);
+        // ignore
     }
 };
 handlers[Dota2.schema.ESOMsg.k_ESOMsg_CacheSubscribed] = onCacheSubscribed;
