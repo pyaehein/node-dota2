@@ -254,3 +254,10 @@ var onTopFriendMatchesResponse = function onTopFriendMatchesResponse(message) {
 
 };
 handlers[Dota2.schema.EDOTAGCMsg.k_EMsgGCToClientTopFriendMatchesResponse] = onTopFriendMatchesResponse;
+
+var onMatchSignedOut = function onMatchSignedOut(message) {
+    var response = Dota2.schema.CMsgGCToClientMatchSignedOut.decode(message);
+    this.emit("matchSignedOut", response);
+    this.Logger.debug("Received information for match signed out.");
+};
+handlers[Dota2.schema.EDOTAGCMsg.k_EMsgGCToClientMatchSignedOut] = onMatchSignedOut;
