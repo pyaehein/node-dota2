@@ -6,7 +6,7 @@
     "long": "^4.0.0",
     "merge": "^1.2.1",
     "steam": "^1.4.1",
-    "steam-resources": "github:odota/node-steam-resources",
+    "steam-resources": "github:pyaehein/node-steam-resources",
     "winston": "^3.2.1"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Arcana/node-dota2.git"
+    "url": "git://github.com/pyaehein/node-dota2.git"
   },
   "keywords": [
     "steam",
